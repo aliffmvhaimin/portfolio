@@ -1,0 +1,97 @@
+---
+const skills = [
+  { label: 'JavaScript (ES6+)', bg: 'bg-yellow-300' },
+  { label: 'React & Next.js',   bg: 'bg-sky-300'    },
+  { label: 'Tailwind CSS',      bg: 'bg-teal-300'   },
+  { label: 'Node.js',           bg: 'bg-green-300'  },
+  { label: 'TypeScript',        bg: 'bg-blue-300'   },
+];
+---
+
+<section id="about" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+    <!-- ── Left: Text block ── -->
+    <div class="space-y-8">
+
+      <!-- "Available for hire" badge -->
+      <div class="inline-flex items-center gap-2 border-2 border-black bg-accent-light px-4 py-2 shadow-hard-sm font-mono font-bold text-sm">
+        <span class="w-2.5 h-2.5 rounded-full bg-green-500 border border-black inline-block"></span>
+        Available for Hire
+      </div>
+
+      <!-- Headline -->
+      <div>
+        <h1 class="font-grotesk font-extrabold text-5xl sm:text-7xl leading-none tracking-tight">
+          Hi, I'm<br/>
+          <span class="text-accent underline decoration-4 decoration-black underline-offset-4">Aliff</span><br/>
+          Muhaimin.
+        </h1>
+      </div>
+
+      <!-- Bio -->
+      <p class="text-lg font-grotesk leading-relaxed border-l-4 border-black pl-4">
+        Full-Stack Software Engineer specialising in high-performance web applications,
+        modern design systems, and intuitive user experiences. I write clean code and
+        ship things that work.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-wrap gap-4">
+        <a href="#projects" class="btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="square" stroke-linejoin="miter" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+          View Projects
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="square" stroke-linejoin="miter" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          Get in Touch
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ── Right: Skills block ── -->
+    <div class="space-y-6">
+
+      <div class="border-2 border-black bg-white p-6 shadow-hard-lg">
+        <!-- Block label -->
+        <div class="border-b-2 border-black pb-3 mb-5">
+          <span class="font-mono font-bold text-xs uppercase tracking-widest bg-black text-white px-2 py-1">Core Tech Stack</span>
+        </div>
+
+        <!-- Skill badge grid -->
+        <div class="flex flex-wrap gap-3">
+          {skills.map((skill) => (
+            <span class={`skill-badge ${skill.bg}`}>
+              {skill.label}
+            </span>
+          ))}
+        </div>
+
+        <!-- Decorative ticker bar -->
+        <div class="mt-6 pt-4 border-t-2 border-black border-dashed">
+          <p class="font-mono text-xs text-gray-500">Also familiar with: PostgreSQL · Docker · Git · Figma · REST & GraphQL APIs</p>
+        </div>
+      </div>
+
+      <!-- Stats block -->
+      <div class="grid grid-cols-2 gap-0 border-2 border-black shadow-hard">
+        <div class="border-r-2 border-black p-5">
+          <p class="font-mono font-bold text-4xl">3+</p>
+          <p class="font-grotesk text-sm mt-1">Years of Experience</p>
+        </div>
+        <div class="p-5">
+          <p class="font-mono font-bold text-4xl">20+</p>
+          <p class="font-grotesk text-sm mt-1">Projects Shipped</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>

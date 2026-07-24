@@ -1,0 +1,117 @@
+---
+interface Project {
+  title: string;
+  type: string;
+  summary: string;
+  accentBg: string;
+  tags: { label: string; bg: string }[];
+  demoLabel: string;
+  demoHref: string;
+}
+
+const projects: Project[] = [
+  {
+    title: 'Nebula AI Workspace',
+    type: 'Full Stack',
+    accentBg: 'bg-accent',
+    summary:
+      'A real-time collaborative workspace featuring automated workflow triggers, a live document canvas, and an integrated AI assistant for smart task summaries and code review.',
+    tags: [
+      { label: 'React',        bg: 'bg-sky-200'    },
+      { label: 'TypeScript',   bg: 'bg-blue-200'   },
+      { label: 'Tailwind CSS', bg: 'bg-teal-200'   },
+      { label: 'Node.js',      bg: 'bg-green-200'  },
+    ],
+    demoLabel: 'Explore Live Demo',
+    demoHref: '#',
+  },
+  {
+    title: 'Pulse Analytics',
+    type: 'Frontend Arch',
+    accentBg: 'bg-yellow-400',
+    summary:
+      'High-frequency financial analytics dashboard featuring WebSocket live updates, interactive multi-currency portfolio tracking, and sub-100 ms latency metric rendering.',
+    tags: [
+      { label: 'Next.js',     bg: 'bg-gray-200'   },
+      { label: 'Tailwind CSS',bg: 'bg-teal-200'   },
+      { label: 'Chart.js',    bg: 'bg-pink-200'   },
+      { label: 'WebSockets',  bg: 'bg-orange-200' },
+    ],
+    demoLabel: 'View Source & Architecture',
+    demoHref: '#',
+  },
+];
+---
+
+<section id="projects" class="bg-black py-20 sm:py-28">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section header -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+      <div>
+        <span class="font-mono font-bold text-xs uppercase tracking-widest bg-accent text-white px-2 py-1">Featured Work</span>
+        <h2 class="font-grotesk font-extrabold text-4xl sm:text-5xl text-white mt-3">
+          Selected<br/>Projects.
+        </h2>
+      </div>
+      <span class="font-mono text-xs border-2 border-white text-white px-3 py-2 shadow-[4px_4px_0_0_#7C3AED] self-start sm:self-auto">
+        2 CASE STUDIES
+      </span>
+    </div>
+
+    <!-- Project cards grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {projects.map((project) => (
+        <article class="nb-card flex flex-col">
+
+          <!-- Card accent header -->
+          <div class={`${project.accentBg} border-b-2 border-black p-5 flex items-start justify-between`}>
+            <div>
+              <span class="font-mono font-bold text-xs uppercase tracking-widest bg-black text-white px-2 py-0.5">
+                {project.type}
+              </span>
+              <h3 class="font-grotesk font-extrabold text-2xl mt-2 text-black">
+                {project.title}
+              </h3>
+            </div>
+            <!-- Corner decoration -->
+            <div class="w-10 h-10 border-2 border-black bg-white flex items-center justify-center font-mono font-bold text-lg flex-shrink-0">
+              →
+            </div>
+          </div>
+
+          <!-- Card body -->
+          <div class="p-5 flex flex-col gap-5 flex-1">
+            <p class="font-grotesk text-sm leading-relaxed text-gray-800">
+              {project.summary}
+            </p>
+
+            <!-- Tech tags -->
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span class={`tech-tag ${tag.bg}`}>{tag.label}</span>
+              ))}
+            </div>
+
+            <!-- Link button (pushed to bottom) -->
+            <div class="mt-auto pt-4 border-t-2 border-black border-dashed">
+              <a
+                href={project.demoHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-secondary w-full text-sm"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="square" stroke-linejoin="miter" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+                {project.demoLabel}
+              </a>
+            </div>
+          </div>
+
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>

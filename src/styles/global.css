@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-canvas font-grotesk text-black antialiased;
+  }
+}
+
+@layer components {
+  /* Primary Neo-Brutalism button — accent fill */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-accent text-white font-bold
+           border-2 border-black
+           shadow-hard
+           px-6 py-3
+           transition-all duration-100
+           hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-hard-lg
+           active:translate-x-0 active:translate-y-0 active:shadow-hard-sm;
+  }
+
+  /* Secondary Neo-Brutalism button — white fill */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-white text-black font-bold
+           border-2 border-black
+           shadow-hard
+           px-6 py-3
+           transition-all duration-100
+           hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-hard-lg
+           active:translate-x-0 active:translate-y-0 active:shadow-hard-sm;
+  }
+
+  /* Neo-Brutalism card */
+  .nb-card {
+    @apply bg-white border-2 border-black shadow-hard-lg
+           transition-all duration-100
+           hover:-translate-x-[3px] hover:-translate-y-[3px] hover:shadow-hard-xl;
+  }
+
+  /* Skill badge pill */
+  .skill-badge {
+    @apply inline-flex items-center gap-1.5 font-mono font-bold text-sm
+           border-2 border-black px-3 py-1.5 shadow-hard-sm
+           transition-all duration-100
+           hover:-translate-x-[1px] hover:-translate-y-[1px] hover:shadow-hard;
+  }
+
+  /* Tech tag inside project card */
+  .tech-tag {
+    @apply font-mono text-xs font-bold border-[1.5px] border-black px-2.5 py-1 shadow-hard-sm;
+  }
+}
