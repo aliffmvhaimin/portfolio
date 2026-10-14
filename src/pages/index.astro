@@ -3,6 +3,21 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Projects from '../components/Projects.astro';
 import Contact from '../components/Contact.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: "Student Study Planner (Genetic Algorithm)",
+    category: "Mobile & Algorithm Design",
+    description: "An automated scheduling mobile application that resolves timetable conflicts and optimizes study blocks using a custom genetic algorithm for constraint satisfaction.",
+    image: "/portfolio/images/study-planner-preview.webp",
+    imageAlt: "Mockup of the Student Study Planner mobile interface",
+    tags: ["Flutter", "Riverpod", "FastAPI", "Python", "Genetic Algorithm"],
+    githubUrl: "https://github.com/aliffmvhaimin/your-repo-name",
+    liveUrl: "https://github.com/aliffmvhaimin/your-repo-name#readme"
+  },
+  // Add your second project object here...
+];
 ---
 
 <Layout
